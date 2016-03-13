@@ -7,12 +7,22 @@
 //
 
 #import "CustomModalViewController.h"
+#import "Interactor.h"
 
 @interface CustomModalViewController ()
+
+@property (nonatomic, strong) Interactor *interactor;
 
 @end
 
 @implementation CustomModalViewController
+
+- (instancetype)initWithInteractor:(Interactor *)interactor {
+    if (self = [super init]) {
+        _interactor = interactor;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +48,23 @@
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[imageView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(imageView)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[imageView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(imageView)]];
+    
+    UIPinchGestureRecognizer *pinchRecogniser = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(userDidPinch:)];
+    [self.view addGestureRecognizer:pinchRecogniser];
+}
+
+- (void)userDidPinch:(UIPinchGestureRecognizer *)recogniser {
+    if (recogniser.state == UIGestureRecognizerStateBegan) {
+        self.interactor.isInteractive = YES;
+        self.interactor.isPresenting = NO;
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else if (recogniser.state == UIGestureRecognizerStateChanged) {
+        if (recogniser.scale <= 1) {
+            [self.interactor updateInteractiveTransition:recogniser.scale];
+        }
+    } else if ((recogniser.state == UIGestureRecognizerStateEnded) || (recogniser.state == UIGestureRecognizerStateCancelled)) {
+        (recogniser.scale < 0.5) ? [self.interactor finishInteractiveTransition] : [self.interactor cancelInteractiveTransition];
+    }
 }
 
 - (void)closeButtonPressed:(id)sender {

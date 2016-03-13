@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class Interactor;
+
 @interface CustomModalViewController : UIViewController
+
+- (instancetype)initWithInteractor:(Interactor *)interactor;
 
 @end

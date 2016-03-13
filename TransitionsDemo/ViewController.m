@@ -51,7 +51,7 @@
 }
 
 - (void)presentModal:(UIButton *)sender {
-    CustomModalViewController *modalViewController = [CustomModalViewController new];
+    CustomModalViewController *modalViewController = [[CustomModalViewController alloc] initWithInteractor:self.interactor];
     modalViewController.modalPresentationStyle = UIModalPresentationCustom;
     // Step 1. Tell the modal that this ViewController is going to be its transitioningDelegate
     modalViewController.transitioningDelegate = self.interactor;

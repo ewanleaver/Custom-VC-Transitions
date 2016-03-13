@@ -13,5 +13,6 @@
 @property (nonatomic, assign) CGRect modalCollapsedFrame;
 @property (nonatomic, assign) CGRect modalExpandedFrame;
 @property (nonatomic, assign) BOOL isPresenting;
+@property (nonatomic, assign) BOOL isInteractive;
 
 @end
