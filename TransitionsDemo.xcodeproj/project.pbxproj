@@ -15,6 +15,7 @@
 		40BF4CA81C94712A0070965C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40BF4CA61C94712A0070965C /* LaunchScreen.storyboard */; };
 		40BF4CB41C9472AD0070965C /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 40BF4CB31C9472AD0070965C /* dog.jpg */; };
 		40BF4CB71C9473E20070965C /* CustomModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BF4CB61C9473E20070965C /* CustomModalViewController.m */; };
+		40BF4CBA1C952DFF0070965C /* Interactor.m in Sources */ = {isa = PBXBuildFile; fileRef = 40BF4CB91C952DFF0070965C /* Interactor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		40BF4CB31C9472AD0070965C /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
 		40BF4CB51C9473E20070965C /* CustomModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomModalViewController.h; sourceTree = "<group>"; };
 		40BF4CB61C9473E20070965C /* CustomModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomModalViewController.m; sourceTree = "<group>"; };
+		40BF4CB81C952DFF0070965C /* Interactor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interactor.h; sourceTree = "<group>"; };
+		40BF4CB91C952DFF0070965C /* Interactor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interactor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 				40BF4C981C94712A0070965C /* Supporting Files */,
 				40BF4C9E1C94712A0070965C /* ViewController.h */,
 				40BF4C9F1C94712A0070965C /* ViewController.m */,
+				40BF4CB81C952DFF0070965C /* Interactor.h */,
+				40BF4CB91C952DFF0070965C /* Interactor.m */,
 			);
 			path = TransitionsDemo;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40BF4CA01C94712A0070965C /* ViewController.m in Sources */,
+				40BF4CBA1C952DFF0070965C /* Interactor.m in Sources */,
 				40BF4CB71C9473E20070965C /* CustomModalViewController.m in Sources */,
 				40BF4C9D1C94712A0070965C /* AppDelegate.m in Sources */,
 				40BF4C9A1C94712A0070965C /* main.m in Sources */,
